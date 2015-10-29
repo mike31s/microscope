@@ -1,6 +1,3 @@
-/**
- * Created by mike on 10/26/2015.
- */
 Template.postForm.events({
 
   // handle the form submission
@@ -9,9 +6,15 @@ Template.postForm.events({
     // stop the form from submitting
     event.preventDefault();
 
-    Meteor.call("addPost");
+    var title = event.target.title.value;
+    var url = event.target.url.value;
+    Meteor.call("addPost", title, url);
+ //   Posts.insert({
+  //    title: event.target.title.value,
+ //     url: event.target.url.value
+ //   });
 
-
+    template.find("form").reset();
   }
 
 });

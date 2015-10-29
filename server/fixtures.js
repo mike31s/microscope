@@ -1,17 +1,17 @@
-// Fixture data 
+
 if (Posts.find().count() === 0) {
-  var now = new Date().getTime();
-
-  var telescopeId = Posts.insert({
+  Posts.insert({
     title: 'Introducing Telescope',
-    submitted: new Date(now - 7 * 3600 * 1000),
+    url: 'http://sachagreif.com/introducing-telescope/'
   });
-
 
   Posts.insert({
     title: 'Meteor',
-    url: 'http://meteor.com',
-    submitted: new Date(now - 10 * 3600 * 1000),
+    url: 'http://meteor.com'
   });
 
+  Posts.insert({
+    title: 'The Meteor Book',
+    url: 'http://themeteorbook.com'
+  });
 }
